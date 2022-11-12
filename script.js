@@ -6,7 +6,8 @@ function compChoiceGenerator() {
 
 function playRound() {
     const movesMade = makeMoves();
-    const result = movesMade[0] - movesMade[1];
+    const result = movesMade[1] - movesMade[0];
+    console.log(result);
     const movesString = `You chose: ${movesArray[movesMade[0]]}, Computer chose: ${movesArray[movesMade[1]]}`;
     if (result === 0) {
         console.log("It's a tie. " + movesString);
@@ -30,12 +31,18 @@ function game() {
     let playerScore = 0;
     let compScore = 0;
     for(let i = 0; i < 5; i++) {
-        playRound();
+        const roundResult = playRound();
+        if (roundResult > 0) {
+            playerScore++;
+        } else if (roundResult < 0) {
+            compScore++;
+        }
     }
+    console.log(`Game Over! Final Score:\nYou: ${playerScore}\nComputer: ${compScore}`);
 }
 
 let movesArray = ["rock", "paper", "scissors"];
-
+game();
 
 
 // console.log(playRound(playerChoice, computerChoice));
