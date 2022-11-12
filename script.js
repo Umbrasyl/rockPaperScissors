@@ -1,6 +1,6 @@
 "use strict";
 
-function compChoiceGenerator() {
+function generateCompChoice() {
     return Math.floor(Math.random() * 3);
 }
 
@@ -22,7 +22,7 @@ function playRound() {
 }
 
 function makeMoves() {
-    const computerChoice =  compChoiceGenerator();
+    const computerChoice =  generateCompChoice();
     const playerChoice = movesArray.indexOf(prompt("Choose rock, paper or scissors: "));
     return [playerChoice, computerChoice];
 }
