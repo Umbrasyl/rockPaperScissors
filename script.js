@@ -30,7 +30,7 @@ function makeMoves() {
 function game() {
     let playerScore = 0;
     let compScore = 0;
-    for(let i = 0; i < 5; i++) {
+    for(let i = 0; i < 1; i++) {
         const roundResult = playRound();
         if (roundResult > 0) {
             playerScore++;
@@ -43,6 +43,3 @@ function game() {
 
 let movesArray = ["rock", "paper", "scissors"];
 game();
-
-
-// console.log(playRound(playerChoice, computerChoice));
